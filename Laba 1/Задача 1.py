@@ -1,9 +1,12 @@
+# Ход слона. Шахматный слон ходит по диагонали. Даны две различные клетки шахматной доски, определите, может ли
+# слон попасть с первой клетки на вторую одним ходом.
+
 # Ввод
 
 vvod_neveren = True
 while vvod_neveren:
-    print("Введите клетку на которой находится слон в формате БукваЧисло (E2): ")
-    nachalo = input().lower().split()[0] # очищаем от мишуры
+    print("Введите клетку на которой находится слон в формате БукваЧисло (E2): ", end='')
+    nachalo = input().lower().split()[0]  # очищаем от мишуры
     try:
         if not nachalo[0].isalpha() or not nachalo[1::].isnumeric():
             print("Неверный формат")
@@ -18,7 +21,7 @@ while vvod_neveren:
 
 vvod_neveren = True
 while vvod_neveren:
-    print("Введите клетку на которой будет находится слон в формате БукваЧисло (E2): ")
+    print("Введите клетку на которой будет находится слон в формате БукваЧисло (E2): ", end='')
     konec = input().lower().split()[0]
     print()
     try:
@@ -34,13 +37,13 @@ while vvod_neveren:
         print("Неверный формат")
 
 if (nachalo[0] + 2 == konec[0] and nachalo[1] + 1 == konec[1]) or \
-    (nachalo[0] + 2 == konec[0] and nachalo[1] - 1 == konec[1]) or \
-    (nachalo[0] - 2 == konec[0] and nachalo[1] + 1 == konec[1]) or \
-    (nachalo[0] - 2 == konec[0] and nachalo[1] - 1 == konec[1]) or \
-    (nachalo[1] + 2 == konec[1] and nachalo[0] + 1 == konec[0]) or \
-    (nachalo[1] + 2 == konec[1] and nachalo[0] - 1 == konec[0]) or \
-    (nachalo[1] - 2 == konec[1] and nachalo[0] + 1 == konec[0]) or \
-    (nachalo[1] - 2 == konec[1] and nachalo[0] - 1 == konec[0]):
+        (nachalo[0] + 2 == konec[0] and nachalo[1] - 1 == konec[1]) or \
+        (nachalo[0] - 2 == konec[0] and nachalo[1] + 1 == konec[1]) or \
+        (nachalo[0] - 2 == konec[0] and nachalo[1] - 1 == konec[1]) or \
+        (nachalo[1] + 2 == konec[1] and nachalo[0] + 1 == konec[0]) or \
+        (nachalo[1] + 2 == konec[1] and nachalo[0] - 1 == konec[0]) or \
+        (nachalo[1] - 2 == konec[1] and nachalo[0] + 1 == konec[0]) or \
+        (nachalo[1] - 2 == konec[1] and nachalo[0] - 1 == konec[0]):
     print("Ход возможен")
 else:
     print('Ход невозможен')
