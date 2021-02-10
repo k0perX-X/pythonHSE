@@ -26,18 +26,18 @@ def capitalize_word(word):
 
 
 def main():
-    x = int_input(input_suggestion="Выберите задание: ")
+    x = int_input(input_suggestion="Выберите задание: ", greater=0, less=5)
     if x == 1:
         print(area_triangle(float_input(input_suggestion='Введите основание треугольника: '),
                             float_input(input_suggestion='Введите высоту треугольника: ')))
-    if x == 2:
+    elif x == 2:
         print(area_circle(float_input(input_suggestion='Введите радиус круга: ')))
-    if x == 3:
+    elif x == 3:
         print(distance(float_input(input_suggestion='Введите X первой точки: '),
                        float_input(input_suggestion='Введите Y первой точки: '),
                        float_input(input_suggestion='Введите X второй точки: '),
                        float_input(input_suggestion='Введите Y второй точки: ')))
-    if x == 4:
+    elif x == 4:
         print('Введите строку для изменения: ')
         print(capitalize_string(input()))
 
