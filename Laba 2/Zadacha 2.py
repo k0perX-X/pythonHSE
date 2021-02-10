@@ -26,7 +26,7 @@ def capitalize_word(word):
 
 
 def main():
-    x = int_input(input_suggestion="Выберите задание: ", greater=0, less=5)
+    x = int_input(input_suggestion="Выберите задание (1-4): ", greater=0, less=5)
     if x == 1:
         print(area_triangle(float_input(input_suggestion='Введите основание треугольника: '),
                             float_input(input_suggestion='Введите высоту треугольника: ')))

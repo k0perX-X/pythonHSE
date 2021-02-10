@@ -1,14 +1,6 @@
 import sys
 import pip
-
-try:
-    from colorama import Fore, Back, Style
-except:
-    print("\033[96mУстановка необходимого ПО.\033[0m")
-    pip.main(['install', 'colorama'])
-    from colorama import Fore, Back, Style
-
-    print('\n')
+from colorama import Fore, Back, Style
 
 
 def int_input(input_suggestion='', greater=float('-inf'), less=float('inf'), console_colour=Fore.RESET,
