@@ -48,14 +48,6 @@ def z4():
     print(capitalize_string(input()))
 
 
-@menu.reassign_menu_exit()
-def f(a):
-    def fu():
-        pass
-
-    return fu()
-
-
 def main():
     menu.show_menu(title='МЕНЮ', title_colour=colorama.Fore.BLUE)
 

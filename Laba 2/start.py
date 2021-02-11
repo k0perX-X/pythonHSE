@@ -1,4 +1,5 @@
 import pip
+
 a = []
 try:
     import colorama
@@ -6,6 +7,8 @@ except:
     def f():
         global colorama
         colorama = __import__('colorama')
+
+
     a.append(('colorama', f))
 try:
     from koinput import Menu
@@ -13,6 +16,8 @@ except:
     def f():
         global Menu
         Menu = __import__('koinput').Menu
+
+
     a.append(('koinput', f))
 if a != []:
     print("\033[96mУстановка необходимого ПО.\033[0m")
@@ -47,16 +52,6 @@ def defz3():
 @mn.add_to_menu_dec('Задача 4')
 def defz4():
     z4.main()
-
-
-@mn.reassign_menu_exit()
-def menu_exit(exit_offer):
-    def f():
-        print("Edited")
-        print(exit_offer, end='')
-        input()
-
-    return f
 
 
 if __name__ == '__main__':
