@@ -1,9 +1,4 @@
 import pip
-from inputs_russian import int_input
-z1 = __import__("Zadacha 1")
-z2 = __import__("Zadacha 2")
-z3 = __import__("Zadacha 3")
-z4 = __import__("Zadacha 4")
 try:
     from colorama import Fore, Back, Style
 except:
@@ -11,6 +6,11 @@ except:
     pip.main(['install', 'colorama'])
     from colorama import Fore, Back, Style
     print('\n')
+from inputs_russian import int_input
+z1 = __import__("Zadacha 1")
+z2 = __import__("Zadacha 2")
+z3 = __import__("Zadacha 3")
+z4 = __import__("Zadacha 4")
 
 
 def menu():
