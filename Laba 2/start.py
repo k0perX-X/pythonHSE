@@ -1,32 +1,52 @@
 import pip
+
 try:
     import colorama
 except:
     print("\033[96mУстановка необходимого ПО.\033[0m")
     pip.main(['install', 'colorama'])
     print('\n')
-from inputs_russian import int_input
+    import colorama
+from inputs_russian import Menu
+
 z1 = __import__("Zadacha 1")
 z2 = __import__("Zadacha 2")
 z3 = __import__("Zadacha 3")
 z4 = __import__("Zadacha 4")
 
+mn = Menu()
 
-def menu():
-    x = int_input(input_suggestion="Выберите задачу (1-4, 5 выход): ", greater=0, less=6)
-    while x != 5:
-        if x == 1:
-            z1.main()
-        elif x == 2:
-            z2.main()
-        elif x == 3:
-            z3.main()
-        else:
-            z4.main()
-        x = int_input(input_suggestion="Выберите задачу (1-4, 5 выход): ", greater=0, less=6)
-    print("Для выхода нажмите любую клавишу...")
-    input()
+@mn.add_to_menu_dec('Задача 1')
+def defz1():
+    z1.main()
 
+
+@mn.add_to_menu_dec('Задача 2')
+def defz2():
+    z2.main()
+
+
+@mn.add_to_menu_dec('Задача 3', 1, 2)
+def defz3(a, b):
+    print(a, b)
+    z3.main()
+
+
+@mn.add_to_menu_dec('Задача 4')
+def defz4():
+    z4.main()
+
+@mn.reassign_menu_exit()
+def menu_exit(exit_offer):
+    def f():
+        print("Edited")
+        print(exit_offer, end='')
+        input()
+    return f
 
 if __name__ == '__main__':
-    menu()
+    # mn.add_to_menu('Задача 1', defz1)
+    # mn.add_to_menu('Задача 2', defz2)
+    # mn.add_to_menu('Задача 3', defz3)
+    # mn.add_to_menu('Задача 4', defz4)
+    mn.show_menu(title='МЕНЮ', title_colour=colorama.Fore.BLUE)
