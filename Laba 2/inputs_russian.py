@@ -1,5 +1,4 @@
 import sys
-import pip
 from colorama import Fore
 
 
@@ -80,10 +79,9 @@ def float_input(input_suggestion='', greater=float('-inf'), less=float('inf'), c
 
 
 class Menu:
-    items = {}
 
     def __init__(self):
-        pass
+        self.items = {}
 
     def add_to_menu(self, name, func, *args):
         self.items[name] = (func, args)
@@ -113,8 +111,34 @@ class Menu:
                   order_of_items=None, number_of_leading_spaces=4, separator='-',
                   input_suggestion='Выберите пункт меню: ', enable_menu_item_exit=True, menu_item_exit='Выход',
                   exit_offer='Нажмите Enter для выхода...'):
+
+        # Type check
+        if type(title) != str and title is not None:
+            raise TypeError('title must be str')
+        if type(title_colour) != str and title_colour is not None:
+            raise TypeError('title_colour must be str')
+        if type(number_of_leading_spaces) != int:
+            raise TypeError('number_of_leading_spaces must be int')
+        if type(number_of_leading_spaces_title) != int:
+            raise TypeError('number_of_leading_spaces_title must be int')
+        if type(console_colour) != str:
+            raise TypeError('console_colour must be str')
+        if type(order_of_items) != tuple and order_of_items is not None:
+            raise TypeError('order_of_items must be tuple')
+        if type(separator) != str:
+            raise TypeError('separator must be str')
+        if type(input_suggestion) != str:
+            raise TypeError('input_suggestion must be str')
+        if type(enable_menu_item_exit) != bool:
+            raise TypeError('enable_menu_item_exit must be bool')
+        if type(menu_item_exit) != str:
+            raise TypeError('menu_item_exit must be str')
+        if type(exit_offer) != str:
+            raise TypeError('exit_offer must be str')
+
         if enable_menu_item_exit:
             self.add_to_menu(menu_item_exit, self.menu_exit(exit_offer))
+
         while True:
             # Title
             if title is not None:
@@ -135,7 +159,9 @@ class Menu:
                 item = self.items[list(self.items.keys())[x - 1]]
                 item[0](*item[1])
 
-            elif type(order_of_items) == tuple:
+            else:
+                if enable_menu_item_exit:
+                    order_of_items = (*order_of_items, len(self.items.keys()) - 1)
                 for i in order_of_items:
                     print(' ' * number_of_leading_spaces + f'{number} {separator} {list(self.items.keys())[i]}')
                     number += 1
@@ -145,13 +171,5 @@ class Menu:
                 item = self.items[list(self.items.keys())[order_of_items[x - 1]]]
                 item[0](*item[1])
 
-            else:
-                raise TupleException('order_of_items is not tuple')
-
             if not enable_menu_item_exit:
                 break
-
-
-class TupleException(Exception):
-    def __init__(self, message):
-        self.message = message

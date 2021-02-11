@@ -16,6 +16,7 @@ z4 = __import__("Zadacha 4")
 
 mn = Menu()
 
+
 @mn.add_to_menu_dec('Задача 1')
 def defz1():
     z1.main()
@@ -26,9 +27,8 @@ def defz2():
     z2.main()
 
 
-@mn.add_to_menu_dec('Задача 3', 1, 2)
-def defz3(a, b):
-    print(a, b)
+@mn.add_to_menu_dec('Задача 3')
+def defz3():
     z3.main()
 
 
@@ -36,13 +36,16 @@ def defz3(a, b):
 def defz4():
     z4.main()
 
+
 @mn.reassign_menu_exit()
 def menu_exit(exit_offer):
     def f():
         print("Edited")
         print(exit_offer, end='')
         input()
+
     return f
+
 
 if __name__ == '__main__':
     # mn.add_to_menu('Задача 1', defz1)
