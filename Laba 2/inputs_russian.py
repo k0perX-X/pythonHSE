@@ -1,6 +1,6 @@
 import sys
 import pip
-from colorama import Fore, Back, Style
+from colorama import Fore
 
 
 def int_input(input_suggestion='', greater=float('-inf'), less=float('inf'), console_colour=Fore.RESET,

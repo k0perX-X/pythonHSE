@@ -1,10 +1,9 @@
 import pip
 try:
-    from colorama import Fore, Back, Style
+    import colorama
 except:
     print("\033[96mУстановка необходимого ПО.\033[0m")
     pip.main(['install', 'colorama'])
-    from colorama import Fore, Back, Style
     print('\n')
 from inputs_russian import int_input
 z1 = __import__("Zadacha 1")
