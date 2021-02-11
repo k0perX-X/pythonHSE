@@ -1,5 +1,5 @@
 import math
-from inputs_russian import float_input, Menu
+from koinput import float_input, Menu
 import colorama
 
 menu = Menu()

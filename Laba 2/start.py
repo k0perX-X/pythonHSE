@@ -1,13 +1,25 @@
 import pip
-
+a = []
 try:
     import colorama
 except:
+    def f():
+        global colorama
+        colorama = __import__('colorama')
+    a.append(('colorama', f))
+try:
+    from koinput import Menu
+except:
+    def f():
+        global Menu
+        Menu = __import__('koinput').Menu
+    a.append(('koinput', f))
+if a != []:
     print("\033[96mУстановка необходимого ПО.\033[0m")
-    pip.main(['install', 'colorama'])
+    for i in a:
+        pip.main(['install', i[0]])
+        i[1]()
     print('\n')
-    import colorama
-from inputs_russian import Menu
 
 z1 = __import__("Zadacha 1")
 z2 = __import__("Zadacha 2")

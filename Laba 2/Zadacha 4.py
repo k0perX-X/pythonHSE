@@ -1,4 +1,4 @@
-from inputs_russian import int_input
+from koinput import int_input
 
 
 def encrypt(s, key):
