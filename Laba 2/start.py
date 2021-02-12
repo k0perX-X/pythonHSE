@@ -59,4 +59,4 @@ if __name__ == '__main__':
     # mn.add_to_menu('Задача 2', defz2)
     # mn.add_to_menu('Задача 3', defz3)
     # mn.add_to_menu('Задача 4', defz4)
-    mn.show_menu(title='МЕНЮ', title_colour=colorama.Fore.BLUE)
+    mn.show_menu(title='МЕНЮ', title_style=colorama.Fore.BLUE)

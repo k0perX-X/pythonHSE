@@ -48,8 +48,16 @@ def z4():
     print(capitalize_string(input()))
 
 
+@menu.reassign_menu_exit()
+def menu_exit(exit_offer):
+    def f():
+        pass
+
+    return f
+
+
 def main():
-    menu.show_menu(title='МЕНЮ', title_colour=colorama.Fore.BLUE)
+    menu.show_menu(title='МЕНЮ', title_style=colorama.Fore.BLUE)
 
 
 if __name__ == '__main__':
