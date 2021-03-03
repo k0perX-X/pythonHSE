@@ -71,8 +71,9 @@ def special_print():
     d = [{'key': el, "value": films[el]} for el in films]
     pprint(d, width=30)
     d.sort(key=lambda x: x['value'])
+    d.reverse()
     print(Fore.YELLOW, "Sorted", Fore.RESET)
-    pprint(d.reverse(), width=30)
+    pprint(d, width=30)
 
 
 def edit_element():
