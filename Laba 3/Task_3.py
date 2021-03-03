@@ -1,7 +1,7 @@
 import requests
 from random import random
 from pprint import pprint
-from koinput import Menu, int_input, float_input
+from koinput import Menu, int_input, float_input, ProgressBar
 from colorama import Fore
 
 mn1 = Menu()
@@ -21,9 +21,14 @@ def make_dict_random():
     global films
     films = {}
     n = int_input('Enter the number of items: ', greater=0)
+    ProgressBar.max_value = n
+    ProgressBar.counter = True
+    ProgressBar.string = "[########################################] @@@"
     for i in range(n):
         films[requests.post("https://randomall.ru/api/general/bookname",
-                            json={'d': "pqvqtwpprpuwuiwbfjcjbvojsifjejg"}).json()] = round(random()*10, 1)
+                            json={'d': "pqvqtwpprpuwuiwbfjcjbvojsifjejg"}).json()] = round(random() * 10, 1)
+        ProgressBar.show(i + 1)
+    print()
 
 
 def manual_input():
@@ -54,7 +59,7 @@ def min_dint():
 
 def average_dict():
     global films
-    print("Average value:", round(sum(films.values())/len(films), 2))
+    print("Average value:", round(sum(films.values()) / len(films), 2))
 
 
 def delete_key():
@@ -72,7 +77,7 @@ def special_print():
     pprint(d, width=30)
     d.sort(key=lambda x: x['value'])
     d.reverse()
-    print(Fore.YELLOW, "Sorted", Fore.RESET)
+    print(Fore.YELLOW + "Sorted" + Fore.RESET)
     pprint(d, width=30)
 
 
