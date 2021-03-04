@@ -7,6 +7,7 @@ import os
 def main():
     with open(os.path.dirname(os.path.abspath(__file__)) + "\\results.txt", 'r') as f:
         lines = [line.split() for line in f]
+        # print(lines)
         while [] in lines:
             lines.remove([])
-        print(max(lines, key=lambda x: x[1])[0], max(lines, key=lambda x: x[1])[1])
+        print(max(lines, key=lambda x: int(x[1]))[0], max(lines, key=lambda x: int(x[1]))[1])

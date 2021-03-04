@@ -1,4 +1,5 @@
 Alex: 55
 Bob: 32
 Nick: 88
+Kolya: 100
 
