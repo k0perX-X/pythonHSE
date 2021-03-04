@@ -6,6 +6,7 @@ import requests
 from hashlib import md5
 from pprint import pprint
 import urllib3
+import json
 
 mn = Menu()
 login = 'admin'
@@ -98,7 +99,12 @@ def database_request(database: str) -> dict or None:
                           "login": login,
                           "password": md5(password.encode('utf32')).hexdigest(),
                           "database": database
-                      }).json()
+                      })
+    try:
+        j = j.json()
+    except:
+        print(Fore.RED + "ERROR!" + Fore.RESET + "\n" + j)
+        return None
     if j['status'] != 'ok':
         if j['status'] == 'error':
             print(Fore.RED + "Error: " + j['type error'] + Fore.RESET)
@@ -143,14 +149,31 @@ def find_errors():
         if p_id[0] in f.keys():
             del f[p_id[0]]
             p_ids.remove(p_id)
-    if p_ids != []:
+    if p_ids:
         print(Fore.YELLOW + "Passengers with incorrect Flight IDs in history" + Fore.RESET)
         for p_id in p_ids:
             print(f"  ID: {p_id[1]} Name: {p[p_id[1]]}")
-    if f != {}:
+    if f:
         print(Fore.YELLOW + "Flights without passengers" + Fore.RESET)
         for f_id in f:
             print(" ", f_id)
+
+
+@mn.add_to_menu_dec("Export to json file")
+def export_json():
+    f = database_request('flights')
+    if f is None:
+        return
+    p = database_request('passengers')
+    if p is None:
+        return
+    if not os.path.exists("database/"):
+        os.mkdir('database')
+    with open("database/flights.json", 'w') as file:
+        file.write(json.dumps(f))
+    with open("database/passengers.json", 'w') as file:
+        file.write(json.dumps(p))
+    print(Fore.YELLOW + "Export completed" + Fore.RESET)
 
 
 @mn.add_to_menu_dec("Set login and password")
