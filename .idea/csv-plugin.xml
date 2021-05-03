@@ -3,21 +3,14 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="C:\Users\kolya\Downloads\Оценка Равных - Лист1.csv">
+        <entry key="\Laba 4\Population_dataset.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="\Laba  4\Laba 4.ipynb">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\Laba  4\Population_dataset.csv">
+        <entry key="\Оценка Равных - Оценка Равных.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
