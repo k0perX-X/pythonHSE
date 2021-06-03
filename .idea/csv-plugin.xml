@@ -10,6 +10,27 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\Laba 5\123.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Laba 5\F10.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Laba 5\MDMT.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\Оценка Равных - Оценка Равных.csv">
           <value>
             <Attribute>
