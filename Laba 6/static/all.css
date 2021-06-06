@@ -1,0 +1,44 @@
+.btn-bubble {
+  color: black;
+  background-color: #F9F0DA;
+  background-repeat: no-repeat; }
+  .btn-bubble:hover, .btn-bubble:focus {
+    animation: bubbles 1s forwards ease-out;
+    background: radial-gradient(circle at center, transparent 30%, #eef 60%, #eef 65%,
+        transparent 70%) random(-10, 110) random(80, 150) / random(50, 120)/100 random(50,
+        120)/100, radial-gradient(circle at center, transparent 30%, #eef 60%,
+        #eef 65%, transparent 70%) random(-10, 110) random(80, 150) / random(50,
+        120)/100 random(50, 120)/100, radial-gradient(circle at center, transparent 30%,
+        #eef 60%, #eef 65%, transparent 70%) random(-10, 110) random(80, 150) / random(50,
+        120)/100 random(50, 120)/100, radial-gradient(circle at center, transparent 30%,
+        #eef 60%, #eef 65%, transparent 70%) random(-10, 110) random(80, 150) / random(50,
+        120)/100 random(50, 120)/100, radial-gradient(circle at center, transparent 30%,
+        #eef 60%, #eef 65%, transparent 70%) random(-10, 110) random(80, 150) / random(50,
+        120)/100 random(50, 120)/100, radial-gradient(circle at center, transparent 30%,
+        #eef 60%, #eef 65%, transparent 70%) random(-10, 110) random(80, 150) / random(50,
+        120)/100 random(50, 120)/100, radial-gradient(circle at center, transparent 30%,
+        #eef 60%, #eef 65%, transparent 70%) random(-10, 110) random(80, 150) / random(50,
+        120)/100 random(50, 120)/100, radial-gradient(circle at center, transparent 30%,
+        #eef 60%, #eef 65%, transparent 70%) random(-10, 110) random(80, 150) / random(50,
+        120)/100 random(50, 120)/100, radial-gradient(circle at center, transparent 30%,
+        #eef 60%, #eef 65%, transparent 70%) random(-10, 110) random(80, 150) / random(50,
+        120)/100 random(50, 120)/100, radial-gradient(circle at center, transparent 30%,
+        #eef 60%, #eef 65%, transparent 70%) random(-10, 110) random(80, 150) / random(50,
+        120)/100 random(50, 120)/100, radial-gradient(circle at center, transparent 30%,
+        #eef 60%, #eef 65%, transparent 70%) random(-10, 110) random(80, 150) / random(50,
+        120)/100 random(50, 120)/100;
+    background-color: #F9F0DA;
+    background-repeat: no-repeat; }
+
+@keyframes bubbles {
+  100% {
+    background-position: random(-10, 110)random(-10, 10) random(-400, 60), random(-10, 110)random(-10,
+        10) random(-400, 60), random(-10, 110)random(-10, 10) random(-400, 60),
+        random(-10, 110)random(-10, 10) random(-400, 60), random(-10, 110)random(-10,
+        10) random(-400, 60), random(-10, 110)random(-10, 10) random(-400, 60),
+        random(-10, 110)random(-10, 10) random(-400, 60), random(-10, 110)random(-10,
+        10) random(-400, 60), random(-10, 110)random(-10, 10) random(-400, 60),
+        random(-10, 110)random(-10, 10) random(-400, 60), random(-10, 110)random(-10,
+        10) random(-400, 60);
+    box-shadow: inset 0 -6.5em 0 #F15B42;   }
+}
